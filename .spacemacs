@@ -356,6 +356,21 @@ you should place your code here."
   (unless window-system
     (global-set-key (kbd "<mouse-4>") 'scroll-down-line)
     (global-set-key (kbd "<mouse-5>") 'scroll-up-line))
+
+
+  ;; prettier settings
+  (setq prettier-js-args '(
+                           "--trailing-comma" "all"
+                           "--bracket-spacing" "true"
+                           "--print-width" "80"
+                           "--use-tabs" "false"
+                           "--tab-width" "2"
+                           "--semi" "false"
+                           ))
+
+  (add-hook 'js2-mode-hook 'prettier-js-mode)
+  (add-hook 'web-mode-hook 'prettier-js-mode)
+  (add-hook 'react-mode-hook 'prettier-js-mode)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will

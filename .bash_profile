@@ -27,7 +27,9 @@ export SCM_CHECK=true
 
 export ANDROID_HOME="/Users/carlos/Library/Android/sdk"
 
-alias e="emacsclient -a ''"
+alias e="emacs"
+export PATH="/Users/carlos/Library/Android/sdk/platform-tools":$PATH
+
 
 # Set Xterm/screen/Tmux title with only a short hostname.
 # Uncomment this (or set SHORT_HOSTNAME to something else),
