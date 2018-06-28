@@ -357,7 +357,9 @@ you should place your code here."
     (global-set-key (kbd "<mouse-4>") 'scroll-down-line)
     (global-set-key (kbd "<mouse-5>") 'scroll-up-line))
 
-
+  ;; minimum of 2 characters for autocomplete to start working
+  (setq company-minimum-prefix-length 2)
+  
   ;; prettier settings
   (setq prettier-js-args '(
                            "--trailing-comma" "all"
