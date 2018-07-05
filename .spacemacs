@@ -352,11 +352,16 @@ you should place your code here."
         ad-do-it)))
   ;; Enable React syntax highlighting for .js files
   (add-to-list 'auto-mode-alist '("\\.js\\'" . react-mode))
+
+  ;;; scroll one line at a time (less "jumpy" than defaults)
+  (setq mouse-wheel-scroll-amount '(2 ((shift) . 1))) ;; two lines at a time
+  (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+  (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+
   ;; Enable mouse support
   (unless window-system
     (global-set-key (kbd "<mouse-4>") 'scroll-down-line)
     (global-set-key (kbd "<mouse-5>") 'scroll-up-line))
-
 
   ;; prettier settings
   (setq prettier-js-args '(
