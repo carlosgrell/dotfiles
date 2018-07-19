@@ -371,6 +371,7 @@ you should place your code here."
                            "--use-tabs" "false"
                            "--tab-width" "2"
                            "--semi" "false"
+                           "--single-quote" "true"
                            ))
 
   (add-hook 'js2-mode-hook 'prettier-js-mode)
