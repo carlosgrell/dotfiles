@@ -327,6 +327,7 @@ values."
   )
 
 (defun dotspacemacs/user-init ()
+
   ;; F11 = Full Screen
   (defun toggle-fullscreen (&optional f)
     (interactive)
@@ -344,6 +345,10 @@ values."
   ;; Disable Menu Bar
   (menu-bar-mode -1)
 (setq-default dotspacemacs-themes '(spacemacs-dark))
+
+
+(define-globalized-minor-mode my-global-fci-mode fci-mode turn-on-fci-mode)
+(my-global-fci-mode 1)
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init', before layer configuration
 executes.
