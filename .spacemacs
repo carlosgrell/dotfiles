@@ -346,9 +346,8 @@ values."
   (menu-bar-mode -1)
 (setq-default dotspacemacs-themes '(spacemacs-dark))
 
+ (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
-(define-globalized-minor-mode my-global-fci-mode fci-mode turn-on-fci-mode)
-(my-global-fci-mode 1)
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init', before layer configuration
 executes.
@@ -374,6 +373,10 @@ you should place your code here."
         ad-do-it)))
   ;; Enable React syntax highlighting for .js files
   (add-to-list 'auto-mode-alist '("\\.js\\'" . react-mode))
+
+(define-globalized-minor-mode my-global-fci-mode fci-mode turn-on-fci-mode)
+(my-global-fci-mode 1)
+
 
   ;;; scroll one line at a time (less "jumpy" than defaults)
   (setq mouse-wheel-scroll-amount '(2 ((shift) . 1))) ;; two lines at a time
