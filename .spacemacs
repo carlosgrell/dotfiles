@@ -403,6 +403,7 @@ you should place your code here."
   (add-hook 'web-mode-hook 'prettier-js-mode)
   (add-hook 'react-mode-hook 'prettier-js-mode)
   (setq js2-mode-show-strict-warnings nil)
+  (setq prettier-js-show-errors nil)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
