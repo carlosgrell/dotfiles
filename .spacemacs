@@ -392,6 +392,7 @@ you should place your code here."
     (global-set-key (kbd "<mouse-5>") 'scroll-up-line))
 
   ;; prettier settings
+  (require 'prettier-js)
   (setq prettier-js-args '(
                            "--trailing-comma" "none"
                            "--bracket-spacing" "true"
