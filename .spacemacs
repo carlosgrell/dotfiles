@@ -84,6 +84,7 @@ values."
 
 (defun dotspacemacs/init ()
   (set-keyboard-coding-system 'utf-8)
+  (setq ruby-insert-encoding-magic-comment nil)
   (setq-default evil-escape-key-sequence "jk")
 
   (global-linum-mode t)
