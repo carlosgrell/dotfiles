@@ -9,10 +9,10 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 13,
+    fontSize: 14,
 
     // font family with optional fallbacks
-    fontFamily:  '"Meslo LGM Nerd Font" ,"Hack Nerd Font", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily:  '"Fira Code", "Meslo LGM Nerd Font" ,"Hack Nerd Font", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     cursorColor: '#666666',
@@ -115,7 +115,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-    plugins: ['hyper-search', 'hyperdocs', 'hyper-ayu'],
+    plugins: ['hyper-search', 'hyperdocs'],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
