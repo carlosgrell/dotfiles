@@ -55,16 +55,16 @@ module.exports = {
     // an array here instead of a color map object
     colors: {
         black: '#222222',
-        lightRed: '#E06C75',
+        lightRed: '#ff9861',
         lightGreen: '#98C379',
         lightYellow: '#E5C07B',
-        lightBlue: '#61AFEF',
+        lightBlue: '#00AFEF',
         lightMagenta: '#FF7788',
-        lightCyan: '#56B6C2',
+        lightCyan: '#30b58d',
         white: '#fff3d0',
         lightBlack: '#9A9A9A',
-        red: '#E06C75#',
-        green: '#98C379',
+        red: '#f92f61',
+        green: '#38D359',
         yellow: '#E5C07B',
         blue: '#55AAEE',
         magenta: '#C678DD',
@@ -115,7 +115,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-    plugins: ['hyper-ayu', 'hyperdocs'],
+    plugins: ['hyperdocs'],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
