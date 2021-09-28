@@ -33,18 +33,18 @@ values."
    '(
      lua
      python
+     neotree
      docker
      octave
      html
+     javascript
      yaml
      elixir
-     javascript
      csharp
      evil-commentary
      ruby
      react
      themes-megapack
-     javascript
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -75,7 +75,7 @@ values."
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(company-tern flycheck-mix)
+   dotspacemacs-excluded-packages '(company-tern flycheck-mix tern)
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and uninstall any
@@ -157,21 +157,22 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '(("Fira Code"
-                                :size 14
-                                :weight medium
-                                :width normal
-                                :powerline-scale 1.1)
-                               ("Fira Code Retina"
-                                :size 14
-                                :weight normal
-                                :width normal
-                                :powerline-scale 1.1)
-                               ("Fira Code Regular"
-                                :size 14
-                                :weight normal
-                                :width normal
-                                :powerline-scale 1.1))
+   ;; dotspacemacs-default-font '(("Fira Code"
+   ;;                              :size 14
+   ;;                              :weight medium
+   ;;                              :width normal
+   ;;                              :powerline-scale 1.1)
+   ;;                             ("Fira Code Retina"
+   ;;                              :size 14
+   ;;                              :weight normal
+   ;;                              :width normal
+   ;;                              :powerline-scale 1.1)
+   ;;                             ("Fira Code Regular"
+   ;;                              :size 14
+   ;;                              :weight normal
+   ;;                              :width normal
+   ;;                              :powerline-scale 1.1))
+
 
    ;; The leader key
    dotspacemacs-leader-key "SPC"
@@ -263,7 +264,7 @@ values."
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup 'true
+   dotspacemacs-maximized-at-startup t
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
@@ -295,7 +296,7 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers 't
+   dotspacemacs-line-numbers nil
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -382,26 +383,45 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq dotspacemacs-elpa-timeout 20)
-  (set-face-attribute 'default nil :font "Fira Code 13" :weight 'normal)
+  ;; (set-face-attribute 'default nil :font "Fira Code 13" :weight 'normal)
   (package-install 'spaceline-all-the-icons)
   (require 'spaceline-all-the-icons)
   (setq neo-theme 'icons)
+
+  (set-frame-font "Fira Code 13" nil t)
+
+  ;; use indent-guide globally
+  (spacemacs/toggle-indent-guide-globally-on)
+
+  ;; fill column indicator
+  (display-fill-column-indicator-mode)
+
+  ;; Disable line-numbers minor mode for neotree
+  (add-hook 'neo-after-create-hook
+            (lambda (&rest _) (display-line-numbers-mode -1)))
+
+  ;; Every time when the neotree window is opened, let it find current
+  ;; file and jump to node.
+  (setq neo-smart-open t)
+
+  ;; track ‘projectile-switch-project’ (C-c p p),
+  (setq projectile-switch-project-action 'neotree-projectile-action)
+
+
   (setq-default evil-escape-delaynerd 0.2)
   (defadvice evil-inner-word (around underscore-as-word activate)
     (let ((table (copy-syntax-table (syntax-table))))
       (modify-syntax-entry ?_ "w" table)
       (with-syntax-table table
         ad-do-it)))
-  ;; Enable React syntax highlighting for .js files
-  (add-to-list 'auto-mode-alist '("\\.js\\'" . react-mode))
-
-  (define-globalized-minor-mode my-global-fci-mode fci-mode turn-on-fci-mode)
-  (my-global-fci-mode 1)
+  ;; ;; Enable React syntax highlighting for .js files
+  ;; (add-to-list 'auto-mode-alist '("\\.js\\'" . react-mode))
 
   (evil-set-undo-system 'undo-tree)
   (define-key evil-motion-state-map (kbd "TAB") #'evil-jump-forward)
 
   (setq alchemist-hooks-test-on-save nil)
+  (setq linum-format " %d ")
 
   ;;; scroll one line at a time (less "jumpy" than defaults)
   (setq mouse-wheel-scroll-amount '(2 ((shift) . 1))) ;; two lines at a time
@@ -427,10 +447,13 @@ you should place your code here."
                            "--single-quote" "true"
                            ))
 
+  (add-hook 'js-mode-hook 'prettier-js-mode)
   (add-hook 'js2-mode-hook 'prettier-js-mode)
   (add-hook 'web-mode-hook 'prettier-js-mode)
   (add-hook 'react-mode-hook 'prettier-js-mode)
   (setq js2-mode-show-strict-warnings nil)
+
+
                                         ;; (setq prettier-js-show-errors nil)
   (setq-default dotspacemacs-configuration-layers '(
                                                     (python :variables python-formatter 'yapf)))
