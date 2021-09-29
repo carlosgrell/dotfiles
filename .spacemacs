@@ -398,7 +398,7 @@ you should place your code here."
   (spacemacs/toggle-indent-guide-globally-on)
 
   ;; fill column indicator on
-  (spacemacs/toggle-fill-column-indicator-on)
+  (spacemacs/toggle-fill-column-indicator-globally-on)
 
   ;; Every time when the neotree window is opened, let it find current
   ;; file and jump to node.
