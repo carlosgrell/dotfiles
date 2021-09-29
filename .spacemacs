@@ -70,7 +70,8 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    ;; dotspacemacs-additional-packages '(all-the-icons)
-   dotspacemacs-additional-packages '(prettier-js all-the-icons memoize spaceline-all-the-icons zerodark-theme)
+   ;; dotspacemacs-additional-packages '(prettier-js all-the-icons memoize spaceline-all-the-icons zerodark-theme)
+   dotspacemacs-additional-packages '(prettier-js all-the-icons memoize spaceline-all-the-icons)
    ;; dotspacemacs-additional-packages '(pretty-mode)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -388,9 +389,9 @@ you should place your code here."
   (require 'spaceline-all-the-icons)
   (setq neo-theme 'icons)
 
-  (package-install 'zerodark-theme)
-  (require 'zerodark-theme)
-  (load-theme 'zerodark t)
+  ;; (package-install 'zerodark-theme)
+  ;; (require 'zerodark-theme)
+  (load-theme 'doom-one t)
 
   (set-frame-font "Fira Code 14" nil t)
 
@@ -457,7 +458,6 @@ you should place your code here."
             (lambda (&rest _) (display-line-numbers-mode -1) (toggle-scroll-bar -1) ))
 
   (setq js2-mode-show-strict-warnings nil)
-
 
                                         ;; (setq prettier-js-show-errors nil)
   (setq-default dotspacemacs-configuration-layers '(
