@@ -392,17 +392,13 @@ you should place your code here."
   (require 'zerodark-theme)
   (load-theme 'zerodark t)
 
-  (set-frame-font "Fira Code 13" nil t)
+  (set-frame-font "Fira Code 14" nil t)
 
   ;; use indent-guide globally
   (spacemacs/toggle-indent-guide-globally-on)
 
-  ;; fill column indicator
-  (add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
-
-  ;; Disable line-numbers minor mode for neotree
-  (add-hook 'neo-after-create-hook
-            (lambda (&rest _) (display-line-numbers-mode -1) (toggle-scroll-bar -1) ))
+  ;; fill column indicator on
+  (spacemacs/toggle-fill-column-indicator-on)
 
   ;; Every time when the neotree window is opened, let it find current
   ;; file and jump to node.
@@ -455,6 +451,11 @@ you should place your code here."
   (add-hook 'js2-mode-hook 'prettier-js-mode)
   (add-hook 'web-mode-hook 'prettier-js-mode)
   (add-hook 'react-mode-hook 'prettier-js-mode)
+
+  ;; Disable line-numbers minor mode for neotree
+  (add-hook 'neo-after-create-hook
+            (lambda (&rest _) (display-line-numbers-mode -1) (toggle-scroll-bar -1) ))
+
   (setq js2-mode-show-strict-warnings nil)
 
 
