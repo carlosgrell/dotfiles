@@ -435,8 +435,6 @@ you should place your code here."
       (modify-syntax-entry ?_ "w" table)
       (with-syntax-table table
         ad-do-it)))
-  ;; ;; Enable React syntax highlighting for .js files
-  ;; (add-to-list 'auto-mode-alist '("\\.js\\'" . react-mode))
 
   (evil-set-undo-system 'undo-tree)
   (define-key evil-motion-state-map (kbd "TAB") #'evil-jump-forward)
@@ -472,11 +470,6 @@ you should place your code here."
                            "--single-quote" "true"
                            ))
 
-  (add-hook 'js-mode-hook 'prettier-js-mode)
-  (add-hook 'js2-mode-hook 'prettier-js-mode)
-  (add-hook 'web-mode-hook 'prettier-js-mode)
-  (add-hook 'react-mode-hook 'prettier-js-mode)
-
   ;; Disable line-numbers minor mode for neotree
   (add-hook 'neo-after-create-hook
             (lambda (&rest _) (display-line-numbers-mode -1) (toggle-scroll-bar -1) ))
@@ -490,7 +483,6 @@ you should place your code here."
 
   (setq alchemist-hooks-compile-on-save nil)
   (setq alchemist-hooks-test-on-save nil)
-
   (setq-default flycheck-disabled-checkers '(elixir-credo))
 
 ;; Do not write anything past this comment. This is where Emacs will
