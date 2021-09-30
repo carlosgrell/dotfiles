@@ -403,8 +403,11 @@ you should place your code here."
   (setq centaur-tabs-height 32)
   (setq centaur-tabs-set-icons t)
   (setq centaur-tabs-gray-out-icons 'buffer)
-  (setq centaur-tabs-set-bar 'over)
+  (setq centaur-tabs-set-bar 'left)
   (setq centaur-tabs-modified-marker "*")
+
+  (unless window-system (setq centaur-tabs-set-bar 'over))
+
 
   ;; (package-install 'zerodark-theme)
   ;; (require 'zerodark-theme)
