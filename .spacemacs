@@ -91,6 +91,7 @@ values."
   (setq ruby-insert-encoding-magic-comment nil)
   (setq-default evil-escape-key-sequence "jk")
 
+
   (global-linum-mode t)
   ;; Scrolling
   (setq mouse-wheel-scroll-amount '(3 ((shift) . 1) ((control) . nil)))
@@ -384,6 +385,8 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq dotspacemacs-elpa-timeout 20)
+  (set-frame-font "Fira Code 14" nil t)
+
   ;; (set-face-attribute 'default nil :font "Fira Code 13" :weight 'normal)
   (package-install 'spaceline-all-the-icons)
   (require 'spaceline-all-the-icons)
@@ -411,9 +414,8 @@ you should place your code here."
 
   ;; (package-install 'zerodark-theme)
   ;; (require 'zerodark-theme)
-  ;; (load-theme 'doom-one t)
+  (load-theme 'doom-one t)
 
-  (set-frame-font "Fira Code 14" nil t)
 
   ;; use indent-guide globally
   (spacemacs/toggle-indent-guide-globally-on)
@@ -476,7 +478,7 @@ you should place your code here."
 
   (setq js2-mode-show-strict-warnings nil)
 
-                                        ;; (setq prettier-js-show-errors nil)
+  ;; (setq prettier-js-show-errors nil)
   (setq-default dotspacemacs-configuration-layers '(
                                                     (python :variables python-formatter 'yapf)))
   )
