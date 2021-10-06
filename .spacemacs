@@ -32,7 +32,7 @@ values."
    dotspacemacs-configuration-layers
    '(
      lua
-     python
+     (python :variables python-formatter 'yapf)
      neotree
      docker
      octave
@@ -388,7 +388,6 @@ you should place your code here."
   (set-frame-font "Fira Code 14" nil t)
 
   ;; (set-face-attribute 'default nil :font "Fira Code 13" :weight 'normal)
-  (package-install 'spaceline-all-the-icons)
   (require 'spaceline-all-the-icons)
   (setq neo-theme 'icons)
 
@@ -477,15 +476,13 @@ you should place your code here."
             (lambda (&rest _) (display-line-numbers-mode -1) (toggle-scroll-bar -1) ))
 
   (setq js2-mode-show-strict-warnings nil)
-
   ;; (setq prettier-js-show-errors nil)
-  (setq-default dotspacemacs-configuration-layers '(
-                                                    (python :variables python-formatter 'yapf)))
-  )
-
   (setq alchemist-hooks-compile-on-save nil)
   (setq alchemist-hooks-test-on-save nil)
   (setq-default flycheck-disabled-checkers '(elixir-credo))
+
+  )
+
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
