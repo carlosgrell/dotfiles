@@ -46,7 +46,7 @@ values."
           lsp-solargraph-completion      t
           lsp-solargraph-references      t
           lsp-solargraph                 t
-          lsp-headerline-breadcrumb-mode nil
+          lsp-headerline-breadcrumb-enable nil
           lsp-prefer-capf nil
           lsp-ui-doc-enable              t
           lsp-auto-guess-root t
