@@ -41,11 +41,13 @@ values."
      javascript
      (lsp :variables
           lsp-ui                         t
-          lsp-ui-sideline-enable         t
+          lsp-ui-sideline-enable         nil
           lsp-solargraph-hover           t
           lsp-solargraph-references      t
           lsp-solargraph                 t
           lsp-headerline-breadcrumb-enable nil
+          lsp-headerline-breadcrumb-mode nil
+          lsp-prefer-capf t
           lsp-ui-doc-enable              t
           lsp-auto-guess-root t
           lsp-solargraph-use-bundler nil
