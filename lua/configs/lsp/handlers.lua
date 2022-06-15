@@ -27,7 +27,7 @@ astronvim.lsp.on_attach = function(client, bufnr)
     vim.lsp.buf.code_action()
   end, { desc = "LSP code action", buffer = bufnr })
   map("n", "<leader>lf", function()
-    vim.lsp.buf.formatting_sync()
+    vim.lsp.buf.formatting_sync(nil, 10000)
   end, { desc = "Format code", buffer = bufnr })
   map("n", "<leader>lh", function()
     vim.lsp.buf.signature_help()
@@ -91,12 +91,19 @@ function astronvim.lsp.server_settings(server_name)
       capabilities = vim.tbl_deep_extend("force", astronvim.lsp.capabilities, server.capabilities or {}),
     }, true, "configs")
   )
+
   local old_on_attach = server.on_attach
   local user_on_attach = opts.on_attach
   opts.on_attach = function(client, bufnr)
     conditional_func(old_on_attach, true, client, bufnr)
     astronvim.lsp.on_attach(client, bufnr)
     conditional_func(user_on_attach, true, client, bufnr)
+  end
+  if server == "solargraph" then
+    opts.settings = {solargraph = {diagnostics = true, formatting = false, logLevel = 'debug'}}
+    opts.on_attach = function(client)
+      client.resolved_capabilities.document_formatting = false
+    end
   end
   return opts
 end
