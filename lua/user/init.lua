@@ -86,8 +86,8 @@ local config = {
         config = function()
           require("hop").setup()
         end,
-      },
-      { 'andymass/vim-matchup' },
+      }
+      -- { 'andymass/vim-matchup' },
     },
     -- All other entries override the setup() call for default plugins
     ["null-ls"] = function(config)
