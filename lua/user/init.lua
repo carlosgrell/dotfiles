@@ -112,6 +112,15 @@ local config = {
       config = { endwise = { enable = true } },
       configs = { endwise = { enable = true } },
     },
+    ['neo-tree'] = {
+      filesystem = {
+        filtered_items = {
+          visible = true, -- This is what you want: If you set this to `true`, all "hide" just mean "dimmed out"
+          hide_dotfiles = false,
+          hide_gitignored = false,
+        },
+      },
+    },
     ["nvim-lsp-installer"] = {
       ensure_installed = { "sumneko_lua" },
     },
@@ -214,6 +223,12 @@ local config = {
       command = "source <afile> | PackerSync",
     })
 
+    vim.fn.matchadd('errorMsg', [[\s\+$]])
+
+    vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+      pattern = { "*" },
+      command = [[%s/\s\+$//e]],
+    })
 
     -- Set up custom filetypes
     -- vim.filetype.add {

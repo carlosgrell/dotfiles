@@ -45,11 +45,15 @@ end
 if is_available "bufferline.nvim" then
   map("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer tab" })
   map("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Previous buffer tab" })
+  map("n", "<S-Right>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer tab" })
+  map("n", "<S-Left>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Previous buffer tab" })
   map("n", ">b", "<cmd>BufferLineMoveNext<cr>", { desc = "Move buffer tab right" })
   map("n", "<b", "<cmd>BufferLineMovePrev<cr>", { desc = "Move buffer tab left" })
 else
   map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
   map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Previous buffer" })
+  map("n", "<S-Right>", "<cmd>bnext<cr>", { desc = "Next buffer" })
+  map("n", "<S-Left>", "<cmd>bprevious<cr>", { desc = "Previous buffer" })
 end
 
 -- Comment
