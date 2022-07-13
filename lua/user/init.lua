@@ -75,6 +75,7 @@ local config = {
   plugins = {
     -- Add plugins, the packer syntax without the "use"
     init = {
+      ["null-ls"] = { disable = true },
       -- You can disable default plugins as follows:
       -- ["goolord/alpha-nvim"] = { disable = true },
 
@@ -97,10 +98,10 @@ local config = {
       -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
       config.sources = {
         -- Set a formatter
-        null_ls.builtins.formatting.rubocop,
+        -- null_ls.builtins.formatting.rubocop,
         -- null_ls.builtins.diagnostics.standardrb,
         -- Set a linter
-        null_ls.builtins.diagnostics.rubocop,
+        -- null_ls.builtins.diagnostics.rubocop,
       }
       -- set up null-ls's on_attach function
       return config -- return final config table
@@ -122,7 +123,7 @@ local config = {
       },
     },
     ["nvim-lsp-installer"] = {
-      ensure_installed = { "sumneko_lua" },
+      ensure_installed = { "sumneko_lua", "solargraph" },
     },
     packer = {
       compile_path = vim.fn.stdpath "config" .. "/lua/packer_compiled.lua",
@@ -213,6 +214,12 @@ local config = {
     -- Set key bindings
     vim.keymap.set("n", "<C-s>", ":w!<CR>")
 
+    vim.o.guifont = "FiraCode Nerd Font Mono:h15"
+
+    vim.api.nvim_set_keymap('n', '<leader>fs', ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
+
+    -- vim.o.guifont = "Hack Nerd Font Mono"
+
     vim.wo.colorcolumn = '120'
     -- Set autocommands
     vim.api.nvim_create_augroup("packer_conf", { clear = true })
@@ -230,6 +237,33 @@ local config = {
       command = [[%s/\s\+$//e]],
     })
 
+    local nvim_lsp = require('lspconfig')
+    nvim_lsp.solargraph.setup {
+      cmd = {
+        "bundle",
+        "exec",
+        "solargraph",
+        "stdio"
+      },
+      filetypes = {
+        "ruby"
+      },
+      flags = {
+        debounce_text_changes = 150
+      },
+      root_dir = nvim_lsp.util.root_pattern("Gemfile", ".git", "."),
+      settings = {
+        solargraph = {
+          autoformat = true,
+          completion = true,
+          diagnostic = true,
+          folding = true,
+          references = true,
+          rename = true,
+          symbols = true
+        }
+      }
+    }
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
