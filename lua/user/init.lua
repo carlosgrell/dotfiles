@@ -214,7 +214,7 @@ local config = {
     -- Set key bindings
     vim.keymap.set("n", "<C-s>", ":w!<CR>")
 
-    vim.o.guifont = "FiraCode Nerd Font Mono:h15"
+    vim.o.guifont = "FiraCode Nerd Font Mono:h16"
 
     vim.api.nvim_set_keymap('n', '<leader>fs', ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
 

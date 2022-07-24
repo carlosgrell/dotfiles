@@ -69,6 +69,22 @@ if is_available "Comment.nvim" then
   )
 end
 
+-- Toggle virtual text
+  local vt = true
+  map("n", "<leader>vt", function()
+
+    if vt then
+      vim.diagnostic.config({ virtual_text = false })
+      vt = false
+      print("Virtual Text OFF")
+    else
+      vim.diagnostic.config({ virtual_text = true })
+      vt = true
+      print("Virtual Text ON")
+    end
+
+  end, { desc = "Toggle Virtual Text" })
+
 -- GitSigns
 if is_available "gitsigns.nvim" then
   map("n", "<leader>gj", function()

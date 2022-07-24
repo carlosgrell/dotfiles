@@ -10,9 +10,9 @@ if status_ok then
       buffer_close_icon = "",
       modified_icon = "",
       close_icon = "",
-      max_name_length = 14,
-      max_prefix_length = 13,
-      tab_size = 20,
+      max_name_length = 30,
+      max_prefix_length = 30,
+      tab_size = 35,
       separator_style = "thin",
     },
   }))
