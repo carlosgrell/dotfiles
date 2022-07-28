@@ -19,12 +19,17 @@ local config = {
 
   -- Set colorscheme
   -- colorscheme = "default_theme",
-  -- colorscheme = "catppuccin",
+  colorscheme = "catppuccin",
   -- colorscheme = "doom-one",
+  -- colorscheme = "nightfox",
+  -- colorscheme = "rose-pine",
+  -- colorscheme = "kanagawa",
   -- colorscheme = "tokyonight",
   -- colorscheme = "one",
-  -- colorscheme = "one",
-  colorscheme = "space-vim-dark",
+  -- colorscheme = "space-vim-dark",
+  -- colorscheme = "github_dark",
+  -- colorscheme = "nord",
+  -- colorscheme = "dracula",
 
   -- set vim options here (vim.<first_key>.<second_key> =  value)
   options = {
@@ -98,8 +103,14 @@ local config = {
       { 'catppuccin/nvim' },
       { 'liuchengxu/space-vim-dark' },
       { 'rakr/vim-one' },
-      -- { 'folke/tokyonight.nvim' },
-      -- { 'projekt0n/github-nvim-theme' },
+      { 'folke/tokyonight.nvim' },
+      { 'projekt0n/github-nvim-theme' },
+      { 'NTBBloodbath/doom-one.nvim' },
+      { 'shaunsingh/nord.nvim' },
+      { 'Mofiqul/dracula.nvim' },
+      { 'EdenEast/nightfox.nvim' },
+      { 'rose-pine/neovim' },
+      { 'rebelot/kanagawa.nvim' },
       -- {
       --   'NTBBloodbath/doom-one.nvim',
       --   config = function()
@@ -265,6 +276,11 @@ local config = {
     -- vim.o.guifont = "Hack Nerd Font Mono"
 
     vim.wo.colorcolumn = '120'
+
+    if vim.g.colors_name == "catppuccin" then
+      vim.cmd [[Catppuccin mocha]]  -- latte, frappe, macchiato, mocha
+    end
+
     -- Set autocommands
     vim.api.nvim_create_augroup("packer_conf", { clear = true })
     vim.api.nvim_create_autocmd("BufWritePost", {
