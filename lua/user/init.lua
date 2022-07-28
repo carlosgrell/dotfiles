@@ -18,7 +18,13 @@ local config = {
   },
 
   -- Set colorscheme
-  colorscheme = "default_theme",
+  -- colorscheme = "default_theme",
+  -- colorscheme = "catppuccin",
+  -- colorscheme = "doom-one",
+  -- colorscheme = "tokyonight",
+  -- colorscheme = "one",
+  -- colorscheme = "one",
+  colorscheme = "space-vim-dark",
 
   -- set vim options here (vim.<first_key>.<second_key> =  value)
   options = {
@@ -29,13 +35,13 @@ local config = {
       mapleader = " ", -- sets vim.g.mapleader
     },
   },
-
   -- Default theme configuration
   default_theme = {
     diagnostics_style = { italic = true },
     -- Modify the color table
     colors = {
       fg = "#abb2bf",
+      -- bg = "#333333",
     },
     -- Modify the highlight groups
     highlights = function(highlights)
@@ -89,6 +95,43 @@ local config = {
         end,
       },
       { 'andymass/vim-matchup' },
+      { 'catppuccin/nvim' },
+      { 'liuchengxu/space-vim-dark' },
+      { 'rakr/vim-one' },
+      -- { 'folke/tokyonight.nvim' },
+      -- { 'projekt0n/github-nvim-theme' },
+      -- {
+      --   'NTBBloodbath/doom-one.nvim',
+      --   config = function()
+      --     require('doom-one').setup({
+      --       cursor_coloring = true,
+      --       terminal_colors = false,
+      --       italic_comments = true,
+      --       enable_treesitter = true,
+      --       transparent_background = false,
+      --       pumblend = {
+      --         enable = true,
+      --         transparency_amount = 20,
+      --       },
+      --       plugins_integrations = {
+      --         neorg = true,
+      --         barbar = true,
+      --         bufferline = true,
+      --         gitgutter = true,
+      --         gitsigns = true,
+      --         telescope = true,
+      --         neogit = true,
+      --         nvim_tree = true,
+      --         dashboard = true,
+      --         startify = true,
+      --         whichkey = true,
+      --         indent_blankline = true,
+      --         vim_illuminate = true,
+      --         lspsaga = true,
+      --       },
+      --     })
+      --   end
+      -- },
     },
     -- All other entries override the setup() call for default plugins
     ["null-ls"] = function(config)
@@ -214,7 +257,8 @@ local config = {
     -- Set key bindings
     vim.keymap.set("n", "<C-s>", ":w!<CR>")
 
-    vim.o.guifont = "FiraCode Nerd Font Mono:h16"
+    -- vim.o.guifont = "FiraCode Nerd Font Mono:h16"
+    vim.o.guifont = "JetbrainsMono Nerd Font Mono:h16"
 
     vim.api.nvim_set_keymap('n', '<leader>fs', ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
 

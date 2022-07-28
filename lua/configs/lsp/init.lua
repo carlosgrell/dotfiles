@@ -17,7 +17,7 @@ if status_ok then
     sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
   end
   vim.diagnostic.config(user_plugin_opts("diagnostics", {
-    virtual_text = true,
+    virtual_text = false,
     signs = { active = signs },
     update_in_insert = true,
     underline = true,
