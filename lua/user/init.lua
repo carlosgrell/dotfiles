@@ -19,11 +19,11 @@ local config = {
 
   -- Set colorscheme
   -- colorscheme = "default_theme",
-  colorscheme = "catppuccin",
+  -- colorscheme = "catppuccin",
   -- colorscheme = "doom-one",
   -- colorscheme = "nightfox",
   -- colorscheme = "rose-pine",
-  -- colorscheme = "kanagawa",
+  colorscheme = "kanagawa",
   -- colorscheme = "tokyonight",
   -- colorscheme = "one",
   -- colorscheme = "space-vim-dark",
@@ -258,7 +258,7 @@ local config = {
 
   -- Diagnostics configuration (for vim.diagnostics.config({}))
   diagnostics = {
-    virtual_text = true,
+    virtual_text = false,
     underline = true,
   },
 

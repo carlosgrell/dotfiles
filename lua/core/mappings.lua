@@ -70,7 +70,7 @@ if is_available "Comment.nvim" then
 end
 
 -- Toggle virtual text
-  local vt = true
+  local vt = false
   map("n", "<leader>vt", function()
 
     if vt then
