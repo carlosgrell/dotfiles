@@ -21,7 +21,9 @@ local sections = {
 
 -- Normal --
 -- Standard Operations
---
+maps.n["<leader>F"] = { function() vim.lsp.buf.format() end, desc = "Format buffer" }
+maps.n["<leader>1"] = { "<cmd>lua vim.diagnostic.open_float()<CR>", desc = "Hover diagnostics" }
+
 -- Hop char 1
 maps.n["<leader>jj"] = { "<cmd>:HopChar1<cr>", desc = "Hop Char 1" }
 maps.n["<leader>fy"] = { "<cmd>:let @+ = expand('%')<cr><cmd>:echo expand('%')<cr>", desc = "Yank file path" }
