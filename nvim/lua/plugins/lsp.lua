@@ -66,7 +66,7 @@ return {
       null_ls.setup {
         sources = {
           -- null_ls.builtins.formatting.rufo,
-          null_ls.builtins.diagnostics.rubocop,
+          -- null_ls.builtins.diagnostics.rubocop,
         },
       }
     end,

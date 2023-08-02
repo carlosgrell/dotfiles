@@ -56,7 +56,7 @@ local options = astronvim.user_opts("options", {
     autopairs_enabled = true, -- enable autopairs at start
     cmp_enabled = true, -- enable completion at start
     codelens_enabled = true, -- enable or disable automatic codelens refreshing for lsp that support it
-    diagnostics_mode = 3, -- set the visibility of diagnostics in the UI (0=off, 1=only show in status line, 2=virtual text off, 3=all on)
+    diagnostics_mode = 2, -- set the visibility of diagnostics in the UI (0=off, 1=only show in status line, 2=virtual text off, 3=all on)
     highlighturl_enabled = true, -- highlight URLs by default
     icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available)
     inlay_hints_enabled = false, -- enable or disable LSP inlay hints on startup (Neovim v0.10 only)
