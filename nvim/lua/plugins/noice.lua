@@ -1,11 +1,16 @@
-
-
 return {
   {
     "folke/noice.nvim",
     name = "noice",
-    opts = {
-    },
+    opts = { },
+    config = function()
+      require('noice').setup({
+        lsp = {
+          hover = { enabled = false, silent = true },
+          signature = { enabled = false, silent = true },
+        },
+      })
+    end,
     dependencies = {
       -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       "MunifTanjim/nui.nvim",

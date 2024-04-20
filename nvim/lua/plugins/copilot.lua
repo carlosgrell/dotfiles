@@ -2,8 +2,10 @@
 return {
   {
     "github/copilot.vim",
+    lazy = false,
     name = "copilot",
-    opts = {
-    },
+    opts = { },
+    config = function()
+    end,
   },
 }
