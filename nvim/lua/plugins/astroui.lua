@@ -10,8 +10,11 @@ return {
   ---@type AstroUIOpts
   opts = {
     -- change colorscheme
+    -- colorscheme = "onedark",
     -- colorscheme = "astrotheme",
-    colorscheme = "tokyonight-moon",
+    -- colorscheme = "cyberdream",
+    -- colorscheme = "tokyonight-moon",
+    colorscheme = "kanagawa",
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {
       init = { -- this table overrides highlights in all themes
