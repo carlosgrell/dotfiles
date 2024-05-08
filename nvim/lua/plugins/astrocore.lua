@@ -123,6 +123,7 @@ return {
         ["<leader>j"] = { "<cmd>:HopChar1<cr>", desc = "Hop Char 1" },
         ["§"] = { "<cmd>:HopChar1<cr>", desc = "Hop Char 1" },
         ["<BS>"] = { "<cmd>:HopChar1<cr>", desc = "Hop Char 1" },
+        ["ç"] = { "<cmd>:HopChar1<cr>", desc = "Hop Char 1" },
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
       },
