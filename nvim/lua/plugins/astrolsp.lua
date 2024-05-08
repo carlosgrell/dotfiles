@@ -80,6 +80,21 @@ return {
           callback = function() vim.lsp.buf.clear_references() end,
         },
       },
+
+      general_autocmds = {
+        {
+          -- events to trigger on file save
+          event = { "BufWritePre" },
+          -- the rest of the autocmd options (:h nvim_create_autocmd)
+          desc = "Remove trailing whitespace on save",
+          callback = function()
+            -- Pattern to match trailing whitespace
+            local pattern = [[%s/\s\+$//e]]
+            -- Execute the substitution command on the entire buffer
+            vim.cmd(pattern)
+          end,
+        },
+      },
     },
     -- mappings to be set up on attaching of a language server
     mappings = {

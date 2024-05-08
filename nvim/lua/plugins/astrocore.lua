@@ -76,7 +76,7 @@ return {
         ["<Leader>F"] = {
           function()
             -- Execute RuboCop auto-correction for the current file
-            vim.cmd('silent !rubocop -A ' .. vim.fn.shellescape(vim.fn.expand('%')))
+            vim.cmd('!rubocop -A ' .. vim.fn.shellescape(vim.fn.expand('%')))
             -- Reload the buffer to reflect changes
             vim.cmd('edit!')
           end,
