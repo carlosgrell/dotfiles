@@ -9,10 +9,10 @@ return {
         transparent = true,
         italic_comments = true,
         hide_fillchars = true,
-        borderless_telescope = true,
+        borderless_telescope = false,
         terminal_colors = true,
       })
-      vim.cmd("colorscheme cyberdream") -- set the colorscheme
+      -- vim.cmd("colorscheme cyberdream") -- set the colorscheme
 
       local telescope = require("telescope")
       local actions = require("telescope.actions")
