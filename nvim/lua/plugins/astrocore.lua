@@ -53,6 +53,18 @@ return {
         L = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         H = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
+        ["<Leader><Leader>"] = {
+          function()
+            -- Check the total number of windows
+            local total_windows = vim.fn.winnr('$')
+            if total_windows > 1 then
+              -- Move to the next window
+              vim.cmd('wincmd w')
+            end
+          end,
+          desc = "Next Window",
+        },
+
         -- mappings seen under group name "Buffer"
         ["<Leader>bD"] = {
           function()
@@ -120,7 +132,6 @@ return {
           end,
           desc = "Toggle Virtual Text",
         },
-        ["<leader>j"] = { "<cmd>:HopChar1<cr>", desc = "Hop Char 1" },
         ["§"] = { "<cmd>:HopChar1<cr>", desc = "Hop Char 1" },
         ["<BS>"] = { "<cmd>:HopChar1<cr>", desc = "Hop Char 1" },
         ["ç"] = { "<cmd>:HopChar1<cr>", desc = "Hop Char 1" },
