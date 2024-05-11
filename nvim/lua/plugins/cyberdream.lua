@@ -12,7 +12,7 @@ return {
         borderless_telescope = false,
         terminal_colors = true,
       })
-      -- vim.cmd("colorscheme cyberdream") -- set the colorscheme
+      --vim.cmd("colorscheme space-nvim") -- set the colorscheme
 
       local telescope = require("telescope")
       local actions = require("telescope.actions")
