@@ -45,9 +45,8 @@ return {
       i = {
         ["§"] = { 'copilot#Accept("\\<CR>")' , expr = true, desc = "Copilot Accept Line", silent = true, replace_keycodes = false },
         ["<Insert>"] = { 'copilot#Accept("\\<CR>")' , expr = true, desc = "Copilot Accept Line", silent = true, replace_keycodes = false },
-        ["<End>"] = { 'copilot#Accept("\\<CR>")' , expr = true, desc = "Copilot Accept Line", silent = true, replace_keycodes = false },
         ["<C-1>"] = { 'copilot#Accept("\\<CR>")' , expr = true, desc = "Copilot Accept Line", silent = true, replace_keycodes = false },
-        ["<Leader>1"] = { 'copilot#Accept("\\<CR>")' , expr = true, desc = "Copilot Accept Line", silent = true, replace_keycodes = false },
+        ["<C-4>"] = { 'copilot#Accept("\\<CR>")' , expr = true, desc = "Copilot Accept Line", silent = true, replace_keycodes = false },
         ["<C-e>"] = { 'copilot#Accept("\\<CR>")' , expr = true, desc = "Copilot Accept Line", silent = true, replace_keycodes = false },
       },
       -- first key is the mode
