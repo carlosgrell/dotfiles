@@ -44,6 +44,11 @@ return {
     mappings = {
       i = {
         ["§"] = { 'copilot#Accept("\\<CR>")' , expr = true, desc = "Copilot Accept Line", silent = true, replace_keycodes = false },
+        ["<Insert>"] = { 'copilot#Accept("\\<CR>")' , expr = true, desc = "Copilot Accept Line", silent = true, replace_keycodes = false },
+        ["<End>"] = { 'copilot#Accept("\\<CR>")' , expr = true, desc = "Copilot Accept Line", silent = true, replace_keycodes = false },
+        ["<C-1>"] = { 'copilot#Accept("\\<CR>")' , expr = true, desc = "Copilot Accept Line", silent = true, replace_keycodes = false },
+        ["<Leader>1"] = { 'copilot#Accept("\\<CR>")' , expr = true, desc = "Copilot Accept Line", silent = true, replace_keycodes = false },
+        ["<C-e>"] = { 'copilot#Accept("\\<CR>")' , expr = true, desc = "Copilot Accept Line", silent = true, replace_keycodes = false },
       },
       -- first key is the mode
       n = {
@@ -133,6 +138,7 @@ return {
           desc = "Toggle Virtual Text",
         },
         ["§"] = { "<cmd>:HopChar1<cr>", desc = "Hop Char 1" },
+        ["<C-e>"] = { "<cmd>:HopChar1<cr>", desc = "Hop Char 1" },
         ["<BS>"] = { "<cmd>:HopChar1<cr>", desc = "Hop Char 1" },
         ["ç"] = { "<cmd>:HopChar1<cr>", desc = "Hop Char 1" },
         ["<Leader>r"] = { "<cmd>lua vim.lsp.stop_client(vim.lsp.get_active_clients()); vim.cmd('edit')<CR>", desc = "Reload all LSPs" },
