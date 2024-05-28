@@ -4,7 +4,7 @@
 ---@type LazySpec
 return {
   "nvim-treesitter/nvim-treesitter",
-  dependencies = { "HiPhish/nvim-ts-rainbow2" },
+  dependencies = { "HiPhish/rainbow-delimiters.nvim" },
   opts = function(_, opts)
     opts.rainbow = {
       enable = true,
