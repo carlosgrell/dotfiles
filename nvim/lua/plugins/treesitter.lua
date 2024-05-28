@@ -9,7 +9,7 @@ return {
     opts.rainbow = {
       enable = true,
       query = "rainbow-parens",
-      strategy = require("ts-rainbow").strategy.global,
+      strategy = require("rainbow-delimiters").strategy.global,
     }
 
     -- add more things to the ensure_installed table protecting against community packs modifying it
