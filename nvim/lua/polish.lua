@@ -19,3 +19,6 @@ vim.filetype.add {
 
 require("lightspeed")
 
+
+vim.cmd("set scrolloff=5")
+
