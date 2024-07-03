@@ -62,13 +62,27 @@ return {
             -- Check the total number of windows
             local total_windows = vim.fn.winnr('$')
             if total_windows > 1 then
-              -- Move to the next window
-              vim.cmd('wincmd w')
+              local current_win = vim.fn.winnr()
+              for i = 1, total_windows do
+                -- Move to the next window
+                vim.cmd('wincmd w')
+                local bufname = vim.fn.bufname()
+                local buftype = vim.bo.buftype
+                local filetype = vim.bo.filetype
+
+                -- Check if the window is a noice notification window
+                if buftype ~= 'nofile' and
+                  filetype ~= 'noice' then
+                  -- Found a non-noice window, break the loop
+                  return
+                end
+              end
+              -- If we didn't find any non-noice window, go back to the original window
+              vim.cmd(current_win .. 'wincmd w')
             end
           end,
           desc = "Next Window",
         },
-
         -- mappings seen under group name "Buffer"
         ["<Leader>bD"] = {
           function()
