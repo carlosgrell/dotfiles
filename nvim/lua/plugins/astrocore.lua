@@ -152,7 +152,7 @@ return {
         },
         ["§"] = { "<cmd>:HopChar1<cr>", desc = "Hop Char 1" },
         ["<C-e>"] = { "<cmd>:HopChar1<cr>", desc = "Hop Char 1" },
-        ["<BS>"] = { "<cmd>:HopChar1<cr>", desc = "Hop Char 1" },
+        [";"] = { "<cmd>:HopChar1<cr>", desc = "Hop Char 1" },
         ["ç"] = { "<cmd>:HopChar1<cr>", desc = "Hop Char 1" },
         ["<Leader>r"] = { "<cmd>lua vim.lsp.stop_client(vim.lsp.get_active_clients()); vim.cmd('edit')<CR>", desc = "Reload all LSPs" },
         -- quick save
