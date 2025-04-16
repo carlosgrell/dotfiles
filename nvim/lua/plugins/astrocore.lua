@@ -32,6 +32,7 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "auto", -- sets vim.opt.signcolumn to auto
         wrap = false, -- sets vim.opt.wrap
+        laststatus = 3,
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -154,6 +155,7 @@ return {
         ["<C-e>"] = { "<cmd>:HopChar1<cr>", desc = "Hop Char 1" },
         [";"] = { "<cmd>:HopChar1<cr>", desc = "Hop Char 1" },
         ["ç"] = { "<cmd>:HopChar1<cr>", desc = "Hop Char 1" },
+        ["s"] = { "<cmd>:HopChar1<cr>", desc = "Hop Char 1" },
         ["<Leader>r"] = { "<cmd>lua vim.lsp.stop_client(vim.lsp.get_active_clients()); vim.cmd('edit')<CR>", desc = "Reload all LSPs" },
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
