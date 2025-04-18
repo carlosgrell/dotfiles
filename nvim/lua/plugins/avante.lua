@@ -4,17 +4,30 @@ return {
     event = "VeryLazy",
     version = false, -- Never set this value to "*"! Never!
     opts = {
-      -- add any opts here
-      -- for example
-      provider = "openai",
-      openai = {
-        endpoint = "https://api.openai.com/v1",
-        model = "gpt-4o", -- your desired model (or use gpt-4o, etc.)
-        timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
-        temperature = 0,
-        max_completion_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
-        --reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
-      },
+      {
+        provider = "claude",
+        openai = {
+          endpoint = "https://api.openai.com/v1",
+          model = "gpt-4o", -- your desired model (or use gpt-4o, etc.)
+          timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
+          temperature = 0,
+          max_completion_tokens = 12000, -- Increase this to include reasoning tokens (for reasoning models)
+          disable_tools = true,
+          reasoning_effort = "high", -- low|medium|high, only used for reasoning models
+        },
+        claude = {
+          endpoint = 'https://api.anthropic.com',
+          model = 'claude-3-7-sonnet-20250219',
+          timeout = 30000, -- Timeout in milliseconds
+          temperature = 0,
+          max_tokens = 12000,
+          reasoning_effort = "high", -- low|medium|high, only used for reasoning models
+        },
+      }
+    },
+    web_search_engine = {
+      provider = "google", -- tavily, serpapi, searchapi, google, kagi, brave, or searxng
+      proxy = nil, -- proxy support, e.g., http://127.0.0.1:7890
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
     build = "make",
