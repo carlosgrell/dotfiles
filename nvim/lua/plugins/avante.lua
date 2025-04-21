@@ -5,7 +5,7 @@ return {
     version = false, -- Never set this value to "*"! Never!
     opts = {
       {
-        provider = "claude",
+        provider = "openai",
         openai = {
           endpoint = "https://api.openai.com/v1",
           model = "gpt-4o", -- your desired model (or use gpt-4o, etc.)
@@ -15,14 +15,14 @@ return {
           disable_tools = true,
           reasoning_effort = "high", -- low|medium|high, only used for reasoning models
         },
-        claude = {
-          endpoint = 'https://api.anthropic.com',
-          model = 'claude-3-7-sonnet-20250219',
-          timeout = 30000, -- Timeout in milliseconds
-          temperature = 0,
-          max_tokens = 12000,
-          reasoning_effort = "high", -- low|medium|high, only used for reasoning models
-        },
+        -- claude = {
+        --   endpoint = 'https://api.anthropic.com',
+        --   model = 'claude-3-7-sonnet-20250219',
+        --   timeout = 30000, -- Timeout in milliseconds
+        --   temperature = 0,
+        --   max_tokens = 12000,
+        --   reasoning_effort = "high", -- low|medium|high, only used for reasoning models
+        -- },
       }
     },
     web_search_engine = {
