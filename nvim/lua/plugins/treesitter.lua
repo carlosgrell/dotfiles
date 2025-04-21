@@ -10,6 +10,14 @@ return {
       enable = true,
       query = "rainbow-parens",
       strategy = require("rainbow-delimiters").strategy.global,
+      highlight = {
+        'RainbowDelimiterYellow',
+        'RainbowDelimiterViolet',
+        'RainbowDelimiterGreen',
+        'RainbowDelimiterBlue',
+        'RainbowDelimiterOrange',
+        'RainbowDelimiterCyan',
+      },
     }
 
     -- add more things to the ensure_installed table protecting against community packs modifying it

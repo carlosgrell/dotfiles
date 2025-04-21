@@ -15,7 +15,13 @@ return {
         dimInactive = true,         -- dim inactive window `:h hl-NormalNC`
         terminalColors = true,       -- define vim.g.terminal_color_{0,17}
         colors = {                   -- add/modify theme and palette colors
-          palette = {},
+          palette = {
+            samuraiRed = "#e49ca0", -- already pastel
+            -- autumnRed = "#e49ca0",
+           --  peachRed = "#e49ca0",
+            -- surimiOrange = "#e49ca0", -- orange-red
+            sakuraPink = "#e49ca0",   -- already pastel
+          },
           theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
         },
         overrides = function(colors) -- add/modify highlights
@@ -27,6 +33,8 @@ return {
           light = "lotus"
         },
       })
+
+      vim.api.nvim_set_hl(0, "RainbowDelimiterRed", { fg = "#f57ce9" })
     end,
   },
 }
