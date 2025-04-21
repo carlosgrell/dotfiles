@@ -34,7 +34,7 @@ return {
         },
       })
 
-      vim.api.nvim_set_hl(0, "RainbowDelimiterRed", { fg = "#f57ce9" })
+      vim.api.nvim_set_hl(0, "RainbowDelimiterRed", { fg = "#e27378" })
     end,
   },
 }
