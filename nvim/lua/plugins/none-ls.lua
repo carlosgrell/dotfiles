@@ -13,7 +13,7 @@ return {
     config.sources = {
       -- Set a formatter
       -- null_ls.builtins.diagnostics.rubocop,
-      null_ls.builtins.formatting.rubocop,
+      -- null_ls.builtins.formatting.rubocop,
       -- null_ls.builtins.formatting.rubyfmt,
       -- null_ls.builtins.formatting.stylua,
       -- null_ls.builtins.formatting.prettier,
